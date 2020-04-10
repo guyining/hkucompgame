@@ -94,7 +94,7 @@ The game ends when:</br>
 - eightDoor()  		//Check if a player get eight door card. Win the game. 
 ### 3.3 Dynamic memory management
 - deck()  	 	//memory the card left in the deck
-- playercard() 		//memory the card in player1's hand
+- playercard() 		//memory the card in player's hand
 - Playerdoor()   	//memory the door opened by player
 ### 3.4 File input/output (e.g., for loading/saving game status)
 - Profile.txt		//Store the profile 
@@ -103,6 +103,6 @@ The game ends when:</br>
 ### 3.5 Program codes in multiple files
 - startgame.h		//For functions of [Start the Game]
 - playgame.h		//For functions of [Play the Game]
-- wingame.h		//For functions of [Win the Game]
+- wingame.h		//For functions of [Win the Game] 
 
 
