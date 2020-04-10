@@ -45,13 +45,13 @@ Discarding a Key card will trigger a prophercy. The player must complete the fol
 1. look at the top five cards from the draw deck
 2. discard one of them 
 3. put the other cards back in any order the player want
-If there are less then five cards in the draw deck, still complete the steps above.＜/br＞
+If there are less then five cards in the draw deck, still complete the steps above.</br>
 #### **Fill the hand:**
 After playing or discarding a card, player must fill the hand back to 5 cards.</br>
 Draw the card one at a time and resolve them:</br>
 1. Location card - just add it to the hand</br>
 2. Door card - unlock immediately if discard a Key card of the same color and put the Door card to the Door deck; otherwise put it to the Limbo pile </br>
-3. Nightmare card - four ways to resolve:</br>
+3. Nightmare card - four ways to resolve:
    - discarding a Key card from the hand</br>
    - discarding the whole hand and repeat setup steps</br>
    - discarding a unlock Door back to the Limbo pile</br>
@@ -78,18 +78,16 @@ The game ends when:</br>
 - gameStart()   	//When both the players have five valid cards. Shuffle the Limbo pile back to the draw deck.
 ### 3.2 Data structures for storing game status
 [Play the Game]</br>
-- GetCard()   		//Draw card from the deck. 
-</br>
+- GetCard()             //Draw card from the deck. 
 - playaCard()   	//Player play a card on the Labyrinth deck
 - validPlayCard()   	//Check if each location card have a different symbol
-</br>
 - discardaCard()   	//Player choose a card the discard
 - ifDiscardKey()   	//If the player discard a key, trigger a prophercy.
 - lookTopFiveCard()   	//Look top five card. If the resisting card less than five, get to look all of them.
 - changeOrder()   	//Player can change the order of the top five card.
-</br>
 - nightmare()  		//Player do something to face the nightmare. 
-- afterNightmare()   	//Check if the player survived after the nightmare. 
+- afterNightmare()   	//Check if the player survived after the nightmare. </br>
+
 [Win the Game]</br>
 - openDoor()   		//When three continue card have the same color, door will open. 
 - sortedDoor()   	//Sort the number of door that are opened by each player.
