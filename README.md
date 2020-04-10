@@ -3,10 +3,16 @@
 ## 1. Team members
 - Gu Yining (UID:3035638064)
 - Wang Xiayu (UID:3035332062)
-## 2. Game description:
+## 2. Game description
+Onirim - a solo Board Game
 ### 2.1 Goal of the game
 Player (or with a partner) must work against game to gather eight Door cards before the deck runs out. In this project, we only provide a solo version. 
-### 2.2 Deck of the game
+### 2.2 How to win
+In Onirim, player play cards from the hand of 5 cards in a row to obtain Door cards.</br>
+To win the game, player should decide the best use of each card in the hand and play carefully around the Nightmare cards.</br>
+Everytime a Nightmare card is drawed in the deck, player must resolve it immediately. </br>
+Player loses imediately if the cards in draw deck runs out.</br>
+### 2.3 Deck of the game
 - 8 Door cards - two each of red, blue, green and brown
 - 10 Nightmare cards
 - 58 Location cards:
@@ -14,18 +20,13 @@ Player (or with a partner) must work against game to gather eight Door cards bef
 - 15 blue chambers: 3 Keys, 4 Moons, 8 Suns
 - 14 green chambers: 3 Keys, 4 Moons, 7 Suns
 - 13 brown chambers: 3 Keys, 4 Moons, 6 Suns
-### 2.3 Piles to separate cards
+### 2.4 Piles to separate cards
 - Draw deck
 - Labyrinth deck	- to put the cards played by the player
 - Limbo pile 		- a temporary pile to put Door and Nightmare cards within one turn
 - Discard deck 		- to put the cards discarded and will not be draw in the rest of the game
 - Door deck		- to put the unlocked Doors
 - Play hand		- player's hand
-### 2.4 How to win
-In Onirim, player play cards from the hand of 5 cards in a row to obtain Door cards.</br>
-To win the game, player should decide the best use of each card in the hand and play carefully around the Nightmare cards.</br>
-Everytime a Nightmare card is drawed in the deck, player must resolve it immediately. </br>
-Player loses imediately if the cards in draw deck runs out.</br>
 ### 2.5 Flow of the game
 #### 2.5.1 Setup stage
 1. Shuffle all the cards to form a draw deck.
