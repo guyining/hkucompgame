@@ -74,28 +74,37 @@ The game ends when:</br>
 ## 3. Function:
 ### 3.1 Generation of random game sets or events
 - getCardStart()  //Draw five cards as opening hand randomly.
-- Limbo()   //Check if Doors or Nightmares are drew. If yes, set aside to the Limbo pile.
+- checkLimbo()   //Check if Doors or Nightmares are drew. If yes, set aside to the Limbo pile.
 - gameStart()   //When both the players have five valid cards. Shuffle the Limbo pile back to the draw deck.
 ### 3.2 Data structures for storing game status
-### 3.3 Dynamic memory management
-### 3.4 File input/output (e.g., for loading/saving game status)
-### 3.5 Program codes in multiple files
-
- 
 [Play the Game]
-GetCard()   //Draw card from the deck. 
+-GetCard()   //Draw card from the deck. 
 
-playaCard()   //Player play a card on the Labyrinth deck
-validPlayCard()   //Check if each location card have a different symbol
+-playaCard()   //Player play a card on the Labyrinth deck
+-validPlayCard()   //Check if each location card have a different symbol
 
-discardaCard()   //Player choose a card the discard
-ifDiscardKey()   //If the player discard a key, trigger a prophercy.
+-discardaCard()   //Player choose a card the discard
+-ifDiscardKey()   //If the player discard a key, trigger a prophercy.
 	lookTopFiveCard()   //Look top five card. If the resisting card less than five, get to look all of them.
 	changeOrder()   //Player can change the order of the top five card.
 
-nightmare()   //Player do something to face the nightmare. 
-afterNightmare()   //Check if the player survived after the nightmare. 
+-nightmare()   //Player do something to face the nightmare. 
+-afterNightmare()   //Check if the player survived after the nightmare. 
 [Win the Game]
-openDoor()   //When three continue card have the same color, door will open. 
-sortedDoor()   //Sort the number of door that are opened by each player.
-eightDoor()   //Check if a player get eight door card. Win the game. 
+-openDoor()   //When three continue card have the same color, door will open. 
+-sortedDoor()   //Sort the number of door that are opened by each player.
+-eightDoor()   //Check if a player get eight door card. Win the game. 
+### 3.3 Dynamic memory management
+deck()   //memory the card left in the deck
+player1card()   //memory the card in player1's hand
+player2card()   //memory the card in player2's hand
+Player1door()   //memory the door opened by player1
+Player2door()   //memory the door opened by player2
+### 3.4 File input/output (e.g., for loading/saving game status)
+
+### 3.5 Program codes in multiple files
+-startgame.h
+-playgame.h
+-wingame.h
+
+
