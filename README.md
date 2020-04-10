@@ -1,12 +1,12 @@
 # COMP2113/ENGG1340 Program Technologies Course Project
 
-## 1. Team members:
+## 1. Team members
 - Gu Yining (UID:3035638064)
 - Wang Xiayu (UID:3035332062)
 ## 2. Game description:
-### 2.1 Goal of the game:
+### 2.1 Goal of the game
 Player (or with a partner) must work against game to gather eight Door cards before the deck runs out. In this project, we only provide a solo version. 
-### 2.2 Deck of the game:
+### 2.2 Deck of the game
 - 8 Door cards - two each of red, blue, green and brown
 - 10 Nightmare cards
 - 58 Location cards:
@@ -14,19 +14,19 @@ Player (or with a partner) must work against game to gather eight Door cards bef
 - 15 blue chambers: 3 Keys, 4 Moons, 8 Suns
 - 14 green chambers: 3 Keys, 4 Moons, 7 Suns
 - 13 brown chambers: 3 Keys, 4 Moons, 6 Suns
-### 2.3 Piles to separate cards:
+### 2.3 Piles to separate cards
 - Draw deck
 - Labyrinth deck	- to put the cards played by the player
 - Limbo pile 		- a temporary pile to put Door and Nightmare cards within one turn
 - Discard deck 		- to put the cards discarded and will not be draw in the rest of the game
 - Door deck		- to put the unlocked Doors
 - Play hand		- player's hand
-### 2.4 How to win:
+### 2.4 How to win
 In Onirim, player play cards from the hand of 5 cards in a row to obtain Door cards.</br>
 To win the game, player should decide the best use of each card in the hand and play carefully around the Nightmare cards.</br>
 Everytime a Nightmare card is drawed in the deck, player must resolve it immediately. </br>
 Player loses imediately if the cards in draw deck runs out.</br>
-### 2.5 Flow of the game:
+### 2.5 Flow of the game
 #### 2.5.1 Setup stage
 1. Shuffle all the cards to form a draw deck.
 2. Draw five cards as opening hand. If Doors or Nightmares are drew, set aside to the Limbo pile. Keep drawing until five Location are drew.
@@ -70,41 +70,41 @@ The game ends when:</br>
 - Onirim - Setup & How to Play https://www.youtube.com/watch?v=h_CLy5pS4j8
 - Onirim | Board Game | BoardGameGeek https://boardgamegeek.com/boardgame/71836/onirim
 
-
-## 3. Function:
+## 3. Function
 ### 3.1 Generation of random game sets or events
-- getCardStart()  //Draw five cards as opening hand randomly.
-- checkLimbo()   //Check if Doors or Nightmares are drew. If yes, set aside to the Limbo pile.
-- gameStart()   //When both the players have five valid cards. Shuffle the Limbo pile back to the draw deck.
+[Start the Game]</br>
+- getCardStart()	//Draw five cards as opening hand randomly.
+- checkLimbo()   	//Check if Doors or Nightmares are drew. If yes, set aside to the Limbo pile.
+- gameStart()   	//When both the players have five valid cards. Shuffle the Limbo pile back to the draw deck.
 ### 3.2 Data structures for storing game status
-[Play the Game]
--GetCard()   //Draw card from the deck. 
-
--playaCard()   //Player play a card on the Labyrinth deck
--validPlayCard()   //Check if each location card have a different symbol
-
--discardaCard()   //Player choose a card the discard
--ifDiscardKey()   //If the player discard a key, trigger a prophercy.
-	lookTopFiveCard()   //Look top five card. If the resisting card less than five, get to look all of them.
-	changeOrder()   //Player can change the order of the top five card.
-
--nightmare()   //Player do something to face the nightmare. 
--afterNightmare()   //Check if the player survived after the nightmare. 
-[Win the Game]
--openDoor()   //When three continue card have the same color, door will open. 
--sortedDoor()   //Sort the number of door that are opened by each player.
--eightDoor()   //Check if a player get eight door card. Win the game. 
+[Play the Game]</br>
+- GetCard()   		//Draw card from the deck. 
+</br>
+- playaCard()   	//Player play a card on the Labyrinth deck
+- validPlayCard()   	//Check if each location card have a different symbol
+</br>
+- discardaCard()   	//Player choose a card the discard
+- ifDiscardKey()   	//If the player discard a key, trigger a prophercy.
+- lookTopFiveCard()   	//Look top five card. If the resisting card less than five, get to look all of them.
+- changeOrder()   	//Player can change the order of the top five card.
+</br>
+- nightmare()  		//Player do something to face the nightmare. 
+- afterNightmare()   	//Check if the player survived after the nightmare. 
+[Win the Game]</br>
+- openDoor()   		//When three continue card have the same color, door will open. 
+- sortedDoor()   	//Sort the number of door that are opened by each player.
+- eightDoor()  		//Check if a player get eight door card. Win the game. 
 ### 3.3 Dynamic memory management
-deck()   //memory the card left in the deck
-player1card()   //memory the card in player1's hand
-player2card()   //memory the card in player2's hand
-Player1door()   //memory the door opened by player1
-Player2door()   //memory the door opened by player2
+- deck()  	 	//memory the card left in the deck
+- playercard() 		//memory the card in player1's hand
+- Playerdoor()   	//memory the door opened by player
 ### 3.4 File input/output (e.g., for loading/saving game status)
-
+- Profile.txt		//Store the profile 
+- SaveProfile() 	//Discard the previous version and save the current playing status for later access in Profile.txt
+- ReadProfile()		//Read the previous status from Profile.txt saved and continue playing 
 ### 3.5 Program codes in multiple files
--startgame.h
--playgame.h
--wingame.h
+- startgame.h		//For functions of [Start the Game]
+- playgame.h		//For functions of [Play the Game]
+- wingame.h		//For functions of [Win the Game]
 
 
