@@ -83,7 +83,6 @@ Every card has four characteristics:</br>
 - cardSignal: 1 for door, 2 for key, 3 for moon, 4 for sun, 5 for nightmare, 0 for empty card
 - status: 0 for cards which has been played and opened a door, 10086 for the empty card
 A card has this set of data to be stored together as a class variable</br>
-</br>
 A Deck is a set of several cards while playing.</br>
 - Door deck is to store the unlocked Doors
 - Draw deck is to store the cards which have not been drew
