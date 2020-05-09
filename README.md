@@ -109,3 +109,8 @@ For example, multiple arrays will be needed for cards ID, color, symbol(signal),
 For clearification, a class is designed in another file to store the card easier.</br>
 Another class for deck is also created in another separate file for the structure of decks.</br>
 
+## 4. Compilation and execution instructions
+### 4.1 Compilation 
+g++ -pedantic-errors -std=c++11 Card.cpp Deck.cpp main.cpp -o main
+### 4.2 Execution
+./main
