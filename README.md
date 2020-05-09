@@ -1,6 +1,11 @@
 # COMP2113/ENGG1340 Program Technologies Course Project
-
-## 1. Team members
+- Team member
+- Game description
+- Functions
+- Compilation and execution instructions
+- Assumptions
+- Demo video link
+## 1. Team member
 - Wang Xiayu (UID:3035332062)
 ## 2. Game description
 Onirim - a solo Board Game
@@ -70,7 +75,7 @@ The game ends when:</br>
 - Onirim - Setup & How to Play https://www.youtube.com/watch?v=h_CLy5pS4j8
 - Onirim | Board Game | BoardGameGeek https://boardgamegeek.com/boardgame/71836/onirim
 
-## 3. Function
+## 3. Functions
 ### 3.1 Generation of random game sets or events
 When the game starts, the a deck of 76 cards is created in an fixed order. </br>
 Before the hand is dealt to the player, the deck needs to be shuffled. </br>
@@ -114,3 +119,10 @@ Another class for deck is also created in another separate file for the structur
 g++ -pedantic-errors -std=c++11 Card.cpp Deck.cpp main.cpp -o main
 ### 4.2 Execution
 ./main
+
+## 5. Assumptions
+- Player knows the rule of the game
+- Player will input resonably, i.e. he will input number/correct letter when asked for number/correct numbers
+
+## 6. Demo video link
+https://drive.google.com/file/d/1XU0_qpJRYnSXhYHmCARjlUc1TVQDvZjt/view?usp=sharing
