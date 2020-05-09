@@ -6,6 +6,7 @@
 #include <chrono>   // chrono::system_clock::now ().time_since_epoch ().count ()
 using namespace std;
 // initiate deck of 76 card
+// output a ordered draw deck
 Deck::Deck(){
 
     for (int i=1;i<=10;i++){                        // initiate the nightmares
@@ -61,13 +62,18 @@ Deck::Deck(){
     }
 }
 // function to shuffle the deck
+// input the deck
+// output a shuffled draw deck
 void Deck::shuffle() {
     // set up the random seed by time
     unsigned seed = chrono::system_clock::now ().time_since_epoch ().count ();
     // shuffle the whole draw deck with seed
     ::shuffle(this->cardorder.begin(),this->cardorder.end(),default_random_engine (seed));
 }
+
 // function to draw a door
+// input the color of the target door
+// output a door of the color if any 
 Card Deck::drawadoor(int color) {
     // draw a door for 3 card of same color continuously
     for (int i=0;i<=(this->cardorder.size()-1);i++){
@@ -85,6 +91,7 @@ Card Deck::drawadoor(int color) {
 
 }
 // draw a card which is not a Nightmare or a Door
+// output the qualified card
 Card Deck::drawanormal() {
     int tag=0;
     // skip the card from mydeck if it is a Nightmare or a Door
