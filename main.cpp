@@ -6,6 +6,8 @@ using namespace std;
 
 // Save the game data to store.txt
 // data including doors deck, labyrinth, hand deck, draw deck
+// input: 4 decks: door, labyrinth, hand, draw deck
+// output: 4 updated deck 
 void savegame(vector<Card> doors,vector<Card> laby,vector<Card> hand,Deck deck) {
     ofstream out;
     out.open("store.txt",ios::trunc);
@@ -45,6 +47,8 @@ void win(){
 }
 
 // Check whether the card played/discarded is legal
+// input labyrinth deck, hand deck, the number of the card the player wishes to play
+// output a boolean value: true for card can be played, and false for cannot
 bool islegal(vector<Card> laby,vector<Card> hand,int a){
     if (a>4||a<0) return false;
     if (laby.empty()) return true;
@@ -54,6 +58,10 @@ bool islegal(vector<Card> laby,vector<Card> hand,int a){
 }
 
 // Single turn of the game process
+// the most significant function for the whole game
+// input 4 decks: draw, hand, labyrinth, door deck
+// void output based on user inputs to console.
+// see details below
 void gameplay(Deck deck,vector<Card> hand,vector<Card> laby, vector<Card> doors){
     // Output to console of current decks
     cout << "Your door deck: " ;
