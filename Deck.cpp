@@ -1,13 +1,11 @@
-//
-// Created by King's Virus Maker on 2020/5/7.
-//
 #include <algorithm> // ::shuffle()
-#include <vector>
-#include "Deck.h"
-#include "Card.h"
+#include <iostream>
+#include "Deck.h"   // for the class of decks
+#include "Card.h"   // for the class of a single card
 #include <random>   // default_random_engine();
 #include <chrono>   // chrono::system_clock::now ().time_since_epoch ().count ()
 using namespace std;
+// initiate deck of 76 card
 Deck::Deck(){
 
     for (int i=1;i<=10;i++){                        // initiate the nightmares
@@ -62,25 +60,34 @@ Deck::Deck(){
         this->cardorder.push_back(Card(i,4,4,1));
     }
 }
+// function to shuffle the deck
 void Deck::shuffle() {
     // set up the random seed by time
     unsigned seed = chrono::system_clock::now ().time_since_epoch ().count ();
     // shuffle the whole draw deck with seed
     ::shuffle(this->cardorder.begin(),this->cardorder.end(),default_random_engine (seed));
 }
+// function to draw a door
 Card Deck::drawadoor(int color) {
-    for (int i=0;i<=this->cardorder.size()-1;i++){
+    // draw a door for 3 card of same color continuously
+    for (int i=0;i<=(this->cardorder.size()-1);i++){
         if ((this->cardorder[i].cardColor==color)&&(this->cardorder[i].cardSignal==1)){
             Card ans=this->cardorder[i];
             this->cardorder.erase(this->cardorder.begin()+i);
             return ans;
         }
     }
+    // output if doors of same color has run out
+    cout<<"out of doors" << endl;
     return Card(0,0,0,10086);
+
+
+
 }
+// draw a card which is not a Nightmare or a Door
 Card Deck::drawanormal() {
-    int tag=0; //debug point
-    // skip the from mydeck if it is nightmare or doors
+    int tag=0;
+    // skip the card from mydeck if it is a Nightmare or a Door
     while(!((this->cardorder[tag].cardID>=11)&&(this->cardorder[tag].cardSignal!=1))){
         tag++;
         if (tag>this->cardorder.size()){//debug point
