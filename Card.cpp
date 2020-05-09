@@ -1,5 +1,11 @@
 #include "Card.h" // for the class of a single card
 //This is a function to initiate new cards
+//input 4 integers which stands for 4 features
+//a: the ID for the card
+//b: the the color of the card
+//c: the symbol(signal) of the card
+//d: the status of the card i.e. whether it has been used to open a door
+//output a card of the card class with 4 features
 Card::Card(int a,int b,int c ,int d) {
     this->cardID=a;         // Number the card by 1-76 in which 1-10=Nightmare
     this->cardColor=b;      // 1=red 2=blue 3=green 4=yellow 5=Nightmare
