@@ -7,6 +7,6 @@
 Card::Card(int a,int b,int c ,int d) {
     this->cardID=a;
     this->cardColor=b;
-    this->cardSignnal=c;
+    this->cardSignal=c;
     this->status=d;
 }

@@ -1,0 +1,3 @@
+/Users/Jinpeng/CLionProjects/OnirimProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Jinpeng/CLionProjects/OnirimProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Jinpeng/CLionProjects/OnirimProject/cmake-build-debug/CMakeFiles/OnirimProject.dir

@@ -12,7 +12,8 @@ public:
     vector<Card> cardorder;     // initiate a Card vector to store the draw deck
     void shuffle();             // shuffle the draw deck
     Deck();                     // initiate the constructor
-
+    Card drawadoor(int);
+    Card drawanormal();
 };
 
 

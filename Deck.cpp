@@ -68,3 +68,28 @@ void Deck::shuffle() {
     // shuffle the whole draw deck with seed
     ::shuffle(this->cardorder.begin(),this->cardorder.end(),default_random_engine (seed));
 }
+Card Deck::drawadoor(int color) {
+    for (int i=0;i<=this->cardorder.size()-1;i++){
+        if ((this->cardorder[i].cardColor==color)&&(this->cardorder[i].cardSignal==1)){
+            Card ans=this->cardorder[i];
+            this->cardorder.erase(this->cardorder.begin()+i);
+            return ans;
+        }
+    }
+    return Card(0,0,0,10086);
+}
+Card Deck::drawanormal() {
+    int tag=0; //debug point
+    // skip the from mydeck if it is nightmare or doors
+    while(!((this->cardorder[tag].cardID>=11)&&(this->cardorder[tag].cardSignal!=1))){
+        tag++;
+        if (tag>this->cardorder.size()){//debug point
+            return Card(0,0,0,10086);
+        }
+    }
+    // draw the card to hand if it is legal and delete this card from mydeck
+    Card ans=this->cardorder[tag];
+    this->cardorder.erase(this->cardorder.begin()+tag);
+    return ans;
+
+}

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Jinpeng/CLionProjects/OnirimProject/Card.h
+
+/Users/Jinpeng/CLionProjects/OnirimProject/Deck.h
+vector
+-
+Card.h
+/Users/Jinpeng/CLionProjects/OnirimProject/Card.h
+
+/Users/Jinpeng/CLionProjects/OnirimProject/main.cpp
+iostream
+-
+Deck.h
+/Users/Jinpeng/CLionProjects/OnirimProject/Deck.h
+Card.h
+/Users/Jinpeng/CLionProjects/OnirimProject/Card.h
+
