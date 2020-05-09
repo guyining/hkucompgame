@@ -1,7 +1,6 @@
 # COMP2113/ENGG1340 Program Technologies Course Project
 
 ## 1. Team members
-- Gu Yining (UID:3035638064)
 - Wang Xiayu (UID:3035332062)
 ## 2. Game description
 Onirim - a solo Board Game
@@ -73,37 +72,41 @@ The game ends when:</br>
 
 ## 3. Function
 ### 3.1 Generation of random game sets or events
-[Start the Game]</br>
-- getCardStart()	//Draw five cards as opening hand randomly.
-- checkLimbo()   	//Check if Doors or Nightmares are drew. If yes, set aside to the Limbo pile.
-- gameStart()   	//When both the players have five valid cards. Shuffle the Limbo pile back to the draw deck.
+When the game starts, the a deck of 76 cards is created in an fixed order. </br>
+Before the hand is dealt to the player, the deck needs to be shuffled. </br>
+This requires a generation of random sets.</br>
+Every game play will require at least one time of shuffle for the draw deck.</br>
 ### 3.2 Data structures for storing game status
-[Play the Game]</br>
-- GetCard()             //Draw card from the deck. 
-- playaCard()   	//Player play a card on the Labyrinth deck
-- validPlayCard()   	//Check if each location card have a different symbol
-- discardaCard()   	//Player choose a card the discard
-- ifDiscardKey()   	//If the player discard a key, trigger a prophercy.
-- lookTopFiveCard()   	//Look top five card. If the resisting card less than five, get to look all of them.
-- changeOrder()   	//Player can change the order of the top five card.
-- nightmare()  		//Player do something to face the nightmare. 
-- afterNightmare()   	//Check if the player survived after the nightmare. </br>
-
-[Win the Game]</br>
-- openDoor()   		//When three continue card have the same color, door will open. 
-- sortedDoor()   	//Sort the number of door that are opened by each player.
-- eightDoor()  		//Check if a player get eight door card. Win the game. 
+Every card has four characteristics:</br>
+- cardID: Card number 1-76
+- cardColor: 1 for red, 2 for blue, 3 for green 4 for yellow, 5 for Nightmare, 0 for empty card 
+- cardSignal: 1 for door, 2 for key, 3 for moon, 4 for sun, 5 for nightmare, 0 for empty card
+- status: 0 for cards which has been played and opened a door, 10086 for the empty card
+A card has this set of data to be stored together as a class variable</br>
+</br>
+A Deck is a set of several cards while playing.</br>
+- Door deck is to store the unlocked Doors
+- Draw deck is to store the cards which have not been drew
+- Hand deck is to store the cards in hand
+- Labyrinth deck is to store the cards played
 ### 3.3 Dynamic memory management
-- deck()  	 	//memory the card left in the deck
-- playercard() 		//memory the card in player's hand
-- Playerdoor()   	//memory the door opened by player
+When a card is discarded, it will never be used again in this game play.</br>
+Therefore, memory to store this card is no longer needed.</br>
+Data for this card will be erased in during the game play.</br>
+This applies to: </br>
+- 1) player chooses to discard a card
+- 2) a Nightmare is solved
+Card data require dynamic memory management also when the card needs to go to other decks.</br>
 ### 3.4 File input/output (e.g., for loading/saving game status)
-- Profile.txt		//Store the profile 
-- SaveProfile() 	//Discard the previous version and save the current playing status for later access in Profile.txt
-- ReadProfile()		//Read the previous status from Profile.txt saved and continue playing 
+Everytime when player makes a choice to play or discard a card, contents all four decks stated above (door deck, draw deck, hand deck and labyrinth deck) will be outputted to a txt file for saving.</br>
+While the player has exit but the game is still in progress, deck contents will be outputted to the same file.</br>
+Player can continue next time by inputting the txt contents to the program.</br>
+The txt file will be delete once a game is finished no matter winning or losing.</br>
+The txt file will be delete if player wishes to abort the game.</br>
 ### 3.5 Program codes in multiple files
-- startgame.h		//For functions of [Start the Game]
-- playgame.h		//For functions of [Play the Game]
-- wingame.h		//For functions of [Win the Game] 
-
+The complexity of the game requires multiple files for the program.</br>
+Cards data and deck data are complicated to store or call if all of them are in only one cpp file.</br>
+For example, multiple arrays will be needed for cards ID, color, symbol(signal), status.</br>
+For clearification, a class is designed in another file to store the card easier.</br>
+Another class for deck is also created in another separate file for the structure of decks.</br>
 
