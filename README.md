@@ -76,6 +76,8 @@ The game ends when:</br>
 - Onirim | Board Game | BoardGameGeek https://boardgamegeek.com/boardgame/71836/onirim
 
 ## 3. Functions
+The program provide the players with the same procedure as stated game rules. </br>
+For each requirements, see details below.</br>
 ### 3.1 Generation of random game sets or events
 When the game starts, the a deck of 76 cards is created in an fixed order. </br>
 Before the hand is dealt to the player, the deck needs to be shuffled. </br>
@@ -115,6 +117,7 @@ For clearification, a class is designed in another file to store the card easier
 Another class for deck is also created in another separate file for the structure of decks.</br>
 
 ## 4. Compilation and execution instructions
+The Makefile is under the directory named cmake-build-debug
 ### 4.1 Compilation 
 g++ -pedantic-errors -std=c++11 Card.cpp Deck.cpp main.cpp -o main
 ### 4.2 Execution
